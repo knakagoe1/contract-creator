@@ -1,0 +1,14 @@
+{
+    "name": "contract-creator",
+    "version": "0.0.0",
+    "description": "",
+    "dependencies": {},
+    "scripts": {
+        "webpack": "webpack",
+        "serve": "webpack-dev-server"
+    },
+    "devDependencies": {
+        "webpack": "^2.6.0",
+        "webpack-dev-server": "^2.4.5"
+    }
+}

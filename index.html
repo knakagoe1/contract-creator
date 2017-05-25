@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ContractCreator</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./bower_components/font-awesome/css/font-awesome.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./bower_components/font-awesome-animation/dist/font-awesome-animation.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./app.css">
+</head>
+
+<body>
+    <div class="container-fluid" style="margin: 1rem">
+        <div class="row">
+            <!--Solidity Code-->
+            <div class="col-md-4 col-ld-4">
+                <h3>Solidity Code</h3>
+                <textarea id="code" v-model="code" rows="40" class="form-control" style="font-size: 0.5rem"></textarea>
+            </div>
+            <!--others-->
+            <div class="col-md-5 col-ld-5">
+                <!--node-->
+                <div class="row">
+                    <h3>Node URL</h3>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input id="nodeUrl" v-model="nodeUrl" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <h3>Contract Name</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-ld-6">
+                        <input id="contractName" v-model="contractName" class="form-control">
+                    </div>
+                    <div class="col-md-3 col-ld-3">
+                        <button id="create" class="btn btn-success" v-on:click="create()">create</button>
+                    </div>
+                    <div class="col-md-3 col-ld-3">
+                        <span id="animation">
+                            <i v-bind:class="{ 'fa fa-wrench faa-wrench animated fa-2x': mining, 'fa fa-smile-o fa-2x': success, 'fa fa-frown-o fa-2x': error }" >
+                            </i>
+                        </span>
+                    </div>
+                </div>
+
+                <!--contract address-->
+                <div class="row">
+                    <h3>Contract Address</h3>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span id="contractAddress">{{contractAddress}}</span>
+                    </div>
+                </div>
+
+                <!--transaction hash-->
+                <div class="row">
+                    <h3>Transaction Hash</h3>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span id="txHash" style="font-size: 0.75rem">{{txHash}}</span>
+                    </div>
+                </div>
+            </div>
+            <!--log-->
+            <div class="col-md-3 col-ld-3">
+                <div class="row">
+                    <h3>Log</h3>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span id="log" style="font-size: 0.5rem">{{log}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script type=" text/javascript " src="./bower_components/jquery/dist/jquery.slim.min.js "></script>
+    <script type="text/javascript " src="./bower_components/tether/dist/js/tether.min.js "></script>
+    <script type="text/javascript " src="./bower_components/bootstrap/dist/js/bootstrap.min.js "></script>
+    <script type="text/javascript " src="./bower_components/vue/dist/vue.min.js "></script>
+    <script type="text/javascript " src="./bower_components/web3/dist/web3.min.js "></script>
+    <!--webpack-->
+    <script type="text/javascript " src="./bundle.js "></script>
+    <!--standalone-->
+    <!--<script type="text/javascript " src="./app.js "></script>-->
+</body>
+
+</html>

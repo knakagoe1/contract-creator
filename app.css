@@ -1,0 +1,7 @@
+.row {
+    margin-bottom: 1rem;
+}
+
+.btn:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,12 @@
+{
+  "name": "contract-creator",
+  "description": "",
+  "main": "",
+  "dependencies": {
+    "vue": "^2.3.3",
+    "bootstrap": "4.0.0-alpha.6",
+    "font-awesome-animation": "0.0.10",
+    "web3": "^0.19.0",
+    "font-awesome": "^4.7.0"
+  }
+}
