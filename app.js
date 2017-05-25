@@ -82,16 +82,14 @@
                         gas: '4700000' // enough gas amount to deploy
                     }, function(e, contract) {
                         animation.$data.mining = true;
+                        txHash.$data.txHash = contract.transactionHash;
+                        storage.setItem("txHash", txHash.$data.txHash);
                         if (typeof contract.address !== 'undefined') {
                             animation.$data.mining = false;
                             animation.$data.success = true;
-                            txHash.$data.txHash = contract.transactionHash;
                             contractAddress.$data.contractAddress = contract.address;
                             document.getElementById("log").style.color = "black";
                             log.$data.log = "var contract = web3.eth.contract(" + JSON.stringify(contract.abi) + ").at('" + contract.address + "')";
-
-                            // save to localstorage of browser 
-                            storage.setItem("txHash", txHash.$data.txHash);
                             storage.setItem("contractAddress", contractAddress.$data.contractAddress);
                         }
                         if (e) {
@@ -102,8 +100,6 @@
                             animation.$data.error = true;
                         }
                     });
-
-                    // localstorageへの保存
                     storage.setItem("code", code.$data.code);
                     storage.setItem("contractName", contractName.$data.contractName);
                     storage.setItem("nodeUrl", nodeUrl.$data.nodeUrl);
